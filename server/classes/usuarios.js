@@ -1,9 +1,16 @@
-// se crea la clase la cual se encarga de las funcionalidades del personas
+// {
+//     id: 'ALkjdaklsdj-asdkj',
+//     nombre: 'Fernando',
+// }
+
+
+
 class Usuarios {
 
     constructor() {
         this.personas = [];
     }
+
     agregarPersona(id, nombre, sala) {
 
         let persona = { id, nombre, sala };
@@ -15,23 +22,18 @@ class Usuarios {
     }
 
     getPersona(id) {
-
         let persona = this.personas.filter(persona => persona.id === id)[0];
 
         return persona;
-
     }
 
     getPersonas() {
-
         return this.personas;
     }
 
     getPersonasPorSala(sala) {
-        let getPersonasEnSala = this.personas.filter(persona => persona.sala);
-        return getPersonasEnSala;
-
-        // ...
+        let personasEnSala = this.personas.filter(persona => persona.sala === sala);
+        return personasEnSala;
     }
 
     borrarPersona(id) {
@@ -41,10 +43,13 @@ class Usuarios {
         this.personas = this.personas.filter(persona => persona.id != id);
 
         return personaBorrada;
+
     }
 
 
 }
+
+
 module.exports = {
     Usuarios
 }
